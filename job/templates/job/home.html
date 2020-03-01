@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="en">
+
+
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Album example for Bootstrap</title>
+    <title>Zakaria Rahman</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
 
@@ -18,7 +21,7 @@
 
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Zakaria</a>
+        <a class="navbar-brand" href="{% url 'home'%}">Zakaria</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,10 +31,10 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Twitter</a>
+                    <a class="nav-link" href="https://twitter.com/" target="_blank">Twitter</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Facebook</a>
+                    <a class="nav-link" href="https://www.facebook.com/" target="_blank">Facebook</a>
                 </li>
                 <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -50,11 +53,11 @@
                 </li> -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Resume</a>
+                    <a class="nav-link" href="{% static 'info.pdf' %}"  target="_blank|Info">Resume</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link" href="/blog/">Blog</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -72,9 +75,10 @@
           <h1 class="jumbotron-heading">Hi, I'm Zakaria</h1>
           <p class="lead text-muted">Hey, my name is Zakaria Rahman and I love make Django websites.It's the thrill of handling the requests that the poeple want!</p>
           <p>
-            <a href="mailto:zakaria.spacesoft@gmail.com" class="btn btn-primary my-2">Email Me</a>
-            
+            <a href="mailto:zakaria.spacesoft@gmail.com" class="btn btn-primary my-2">Email Me</a>  
           </p>
+
+          <img src="{% static 'zaka.jpg' %}"  height=250 width=240>
         </div>
       </section>
 
@@ -86,7 +90,7 @@
             {% for job in jobs.all %}
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src ="{{job.image.url}}" width=250 height=200>
+                <img class="card-img-top" src ="{{job.image.url}}">
                 <div class="card-body">
                   <p class="card-text">{{job.summary}}</p>  
                   </div>
